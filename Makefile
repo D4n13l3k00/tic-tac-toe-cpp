@@ -1,2 +1,2 @@
 all:
-	g++ main.cpp req/table.cpp req/clearscreen.cpp -o main
+	g++ main.cpp req/*.cpp -o main

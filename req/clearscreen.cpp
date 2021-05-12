@@ -1,11 +1,10 @@
 #ifdef _WIN32 || _WIN64
 
-    #include <windows.h>
     #include <stdlib.h>
 
     void clearconsole()
     {
-        sysytem("cls");
+        system("cls");
     }
 
 #else
