@@ -13,5 +13,15 @@ jobs:
       - name: Run "make"
         run: make && make static
 
-      # - name: Create archive of "build"
-      #   run: tar -czf build.tar.gz build
+      - name: Create archive of "build"
+        run: tar -czf build.tar.gz build
+
+      - name: Upload build to GitHub release
+        uses: marvinpinto/action-automatic-releases@latest
+        with:
+          repo_token: ${{ secrets.GHACTIONS_TOKEN }}
+          automatic_release_tag: latest
+          prerelease: false
+          title: CI/CD Build
+          files: |
+            build.tar.gz
